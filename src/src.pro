@@ -4,7 +4,7 @@ QT += gui widgets sql
 CONFIG += c++11 silent
 
 # Build features
-webengine|macx {
+webengine {
     QT += webenginewidgets
     DEFINES += USE_WEBENGINE
 } else {

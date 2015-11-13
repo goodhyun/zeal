@@ -61,6 +61,8 @@ Settings::Settings(QObject *parent) :
 #ifndef USE_WEBENGINE
     QWebSettings::globalSettings()->setUserStyleSheetUrl(QStringLiteral("qrc:///browser/highlight.css"));
 #endif
+    
+    QWebSettings::globalSettings()->setAttribute(QWebSettings::JavascriptEnabled, false);
 
     load();
 }
