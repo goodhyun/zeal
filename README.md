@@ -1,4 +1,4 @@
-# Zeal
+# Zeal on Mac
 
 [![GitHub release](https://img.shields.io/github/release/zealdocs/zeal.svg?style=flat-square)](https://github.com/zealdocs/zeal/releases) [![IRC](https://img.shields.io/badge/irc-%23zealdocs-blue.svg?style=flat-square)](https://kiwiirc.com/client/irc.freenode.net/#zealdocs)
 
@@ -11,10 +11,9 @@
 > (from WordNet 3.0)
 
 Zeal is a simple offline documentation browser inspired by [Dash](https://kapeli.com/dash).
+Dash is such a great tool, but you might also need Zeal on OS X for various reasons.
 
-![Screenshot](https://i.imgur.com/SiLvpz8.png)
-
-[More screenshots](https://imgur.com/a/eVi97)
+![Screenshot on Mac](http://i.imgur.com/kNsDNc7.png)
 
 ## Build Status
 
@@ -37,11 +36,14 @@ After installing Zeal, you need to download docsets. Go to *File->Options->Docse
 
 ### Requirements
 * [Qt](https://www.qt.io/) version 5.2.0 or above. Required modules: Qt WebKit Widgets, Qt SQL plugin for SQLite, Qt X11 Extras (X11 only).
+  * brew install qt5
 * [libarchive](http://libarchive.org/).
-* X11 only: `xcb-util-keysyms`.
-* Ubuntu Unity only: [libappindicator](https://launchpad.net/libappindicator).
+  * libarchive is needed and already included in OS itself, but it lacks header files. 
+  * [Compile libarchive](http://berrybots.com/wiki/Compiling_BerryBots_app_on_Mac_OS_X_with_XCode) and add it into LIBS in core.pri. You also need some from xcode for its dependency.
 
 To compile Zeal run `qmake` and then `make`. Linux users can install Zeal with `make install` command.
+* /usr/local/opt/qt5/bin/qmake
+* make
 
 ## Query & Filter docsets
 
@@ -57,7 +59,7 @@ You can also search multiple docsets separating them with a comma:
 
 If you prefer, you can start Zeal with a query from command line:
 
-`zeal python:bomb`
+`open -a zeal -n -g --args python:bomb`
 
 ## Creating your own docsets
 
